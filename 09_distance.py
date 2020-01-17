@@ -20,11 +20,16 @@ GPIO.setup(18,GPIO.IN)
 time.sleep(5)
 try:
     while True:
+#        print 'Distance: %0.2f m' %checkdist()
+        #print checkdist()
         temp = float(checkdist())
         print(temp)
         if temp <= 0.1:
+            #import Record_form.py
             import os
             os.system("python3 Record_form.py")
+            #print("Hello")
+            #time.sleep(3)
         time.sleep(0.5)
 except KeyboardInterrupt:
     GPIO.cleanup()
