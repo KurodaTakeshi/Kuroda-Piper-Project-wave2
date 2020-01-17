@@ -2,9 +2,9 @@ import csv
 import datetime
 import psycopg2
 
-conn = psycopg2.connect(host='127.0.0.1', dbname='test_db', user='postgres', password='', port=5432)
+conn = psycopg2.connect(host='IP Adress', dbname='XXXXX', user='XXXXX', password='XXXXX', port=XXXXX)
 cursor = conn.cursor()
-cursor.execute("DELETE FROM test_table;")
+cursor.execute("DELETE FROM XXXX_table;")
 
 import glob
 
@@ -26,8 +26,7 @@ for file in glob.glob("/home/pi/data/*.csv"):
             temp4 = row[3]
             temp5 = row[4]
             temp6 = row[5]
-            #print(row)
-            cursor.execute("INSERT INTO test_table (date,name,task,start_at,finish_at,second) VALUES (%s,%s,%s,%s,%s,%s)",(temp1,temp2,temp3,temp4,temp5,temp6))
+            cursor.execute("INSERT INTO XXXX_table (date,name,task,start_at,finish_at,second) VALUES (%s,%s,%s,%s,%s,%s)",(temp1,temp2,temp3,temp4,temp5,temp6))
 
 conn.commit()
 cursor.close()
