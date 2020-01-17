@@ -18,12 +18,10 @@ def foo():
     if flg == 1:
         dt_now2 = datetime.datetime.now()
         logDate = dt_now1.strftime("%Y/%m/%d")
-        #myname = 'Takeshi Kuroda'
         myname = 'My_Name'
         list =[logDate,myname,task,dt_now1.strftime('%Y/%m/%d %H:%M:%S'),dt_now2.strftime('%Y/%m/%d %H:%M:%S')]
         
         try:
-            #with open(r"/home/pi/Desktop/data/kuroda_data.csv",'a', newline="") as f:
             with open(r"/home/pi/Desktop/data/My_data.csv",'a', newline="") as f:
                 writer = csv.writer(f)
                 writer.writerow(list)
@@ -35,7 +33,6 @@ def foo():
 
 root = Tk()
 root.title('Record form')
-#root.configure(width = 640, height=480,bg='skyblue')
 frame1 = ttk.Frame(root)
 label1 = ttk.Label(frame1, text='Measuring time...')
 label2 = ttk.Label(frame1, text='Please enter the task before finishing.\nAfter entering the task, click the OK button to finish')
