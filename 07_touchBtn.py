@@ -16,8 +16,11 @@ def loop():
         if GPIO.input(BtnPin) == GPIO.HIGH: # Check whether the button is pressed or not.
             time.sleep(0)
             if GPIO.input(BtnPin) == GPIO.HIGH:
+                #status = not status
+                #GPIO.output(LedPin, status)
                 import os
                 os.system("python3 csv_send.py")
+                #print 'The status of led is toggled !'
             while(not not GPIO.input(BtnPin)):
                 pass
 
